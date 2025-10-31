@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/plane_svgrepo_com"
+        android:title="@string/Trips" />
+    <item
+        android:id="@+id/contactUsFragment"
+        android:icon="@android:drawable/stat_sys_phone_call"
+        android:title="Contact Us" />
+
+    <item
+        android:id="@+id/cheap_flights"
+        android:icon="@drawable/screenshot_2025_10_30_195254"
+        android:title="Cheap Flights"
+        />
+
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/profile_circle_svgrepo_com"
+        android:title="@string/Profile" />
+
+
+</menu>
