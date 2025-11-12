@@ -9,12 +9,21 @@
     android:background="#E6FDFF"
     tools:context=".MainActivity">
 
+    <!-- 🔹 Moved background image to the top so it's behind everything -->
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="678dp"
+        android:layout_height="1234dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/_755779239"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
     <!-- Logo -->
-
-    <!-- Title -->
-
-    <!-- Email Input -->
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="194dp"
@@ -27,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/packpalsignup" />
 
-    <!-- Password Input -->
+    <!-- Title -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -42,6 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView2" />
 
+    <!-- Email Input -->
     <EditText
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="0dp"
@@ -61,10 +71,10 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#B0C4DE"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView" />
 
+    <!-- Password Input -->
     <EditText
         android:id="@+id/editTextTextPassword"
         android:layout_width="0dp"
@@ -127,20 +137,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnlogin" />
 
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="678dp"
-        android:layout_height="1234dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/_755779239"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+    <!-- Google Sign-In Button -->
+    <Button
+        android:id="@+id/btnGoogleLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#DB4437"
+        android:clipToOutline="true"
+        android:elevation="4dp"
+        android:outlineProvider="background"
+        android:padding="16dp"
+        android:text="Sign in with Google"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/btnsignup"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Biometric Button -->
     <Button
         android:id="@+id/btnBiometric"
         android:layout_width="0dp"
@@ -158,8 +175,6 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnsignup" />
-
-
+        app:layout_constraintTop_toBottomOf="@id/btnGoogleLogin" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
