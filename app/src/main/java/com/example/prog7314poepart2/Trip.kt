@@ -7,11 +7,12 @@ import java.util.Locale
 data class Trip(
     val tripName: String,
     val country: String,
-    val startDate: String, 
+    val startDate: String,
     val endDate: String,
     val notes: String?,
-    val tripTypes: List<String>, 
-    val weatherCondition: String = "" 
+    val tripTypes: List<String>,
+    val weatherCondition: String = "",
+    val destinationCoordinates: LatLng? = null
 ) {
     fun getStartDateAsDate(): Date {
         val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.US)
@@ -27,4 +28,9 @@ data class Trip(
         }
     }
 }
+
+data class LatLng(
+    val latitude: Double,
+    val longitude: Double
+)
 // (Andy's Tech Tutorials, 2022)
