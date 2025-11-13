@@ -1,14 +1,19 @@
 package com.example.prog7314poepart2
 
+import android.content.Intent
+import android.graphics.Paint
+import android.graphics.pdf.PdfDocument
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AlertDialog
-import com.example.prog7314poepart2.R
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
+import java.io.File
+import java.io.FileOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
@@ -29,9 +34,10 @@ class WeatherActivity : AppCompatActivity() {
         val weatherIcon = findViewById<ImageView>(R.id.weatherIcon)
         val btnBack = findViewById<Button>(R.id.btnBack)
         val btnPackingList = findViewById<Button>(R.id.btnPackingList)
+        val btnShareTrip = findViewById<Button>(R.id.btnShareTrip)
 
         var tripIndex = intent.getIntExtra("tripIndex", -1)
-        Log.d("WeatherActivity", "Received tripIndex: $tripIndex, trips size: ${TripRepository.trips.size}, trips: ${TripRepository.trips}")
+        Log.d("WeatherActivity", "Received tripIndex: $tripIndex, trips size: ${TripRepository.trips.size}")
 
         if (tripIndex == -1 && TripRepository.trips.isNotEmpty()) {
             tripIndex = 0
@@ -45,7 +51,7 @@ class WeatherActivity : AppCompatActivity() {
             tvStartDate.text = "Start Date: ${trip.startDate}"
             tvEndDate.text = "End Date: ${trip.endDate}"
             tvNotes.text = "Notes: ${trip.notes ?: "None"}"
-            tvTripTypes.text = "Trip Types: ${if (trip.tripTypes.isNotEmpty()) trip.tripTypes.joinToString(", ") else "None"}"
+            tvTripTypes.text = "Trip Types: ${trip.tripTypes.joinToString(", ")}"
             tvWeatherCondition.text = "Weather: ${trip.weatherCondition}"
 
             val iconResId = when (trip.weatherCondition.lowercase()) {
@@ -59,11 +65,15 @@ class WeatherActivity : AppCompatActivity() {
             weatherIcon.setImageResource(iconResId)
 
             val tripDays = calculateTripDays(trip.startDate, trip.endDate)
-            Log.d("WeatherActivity", "Trip duration: $tripDays days")
 
             btnPackingList.setOnClickListener {
                 showPackingListDialog(trip.weatherCondition, tripDays)
             }
+
+            btnShareTrip.setOnClickListener {
+                shareTripAsPdf(trip, tripDays)
+            }
+
         } else {
             tvWeatherCondition.text = "Weather: No trip available"
             weatherIcon.setImageResource(R.drawable.ic_sunny)
@@ -75,9 +85,8 @@ class WeatherActivity : AppCompatActivity() {
     }
 
     private fun calculateTripDays(startDate: String, endDate: String): Int {
-        Log.d("WeatherActivity", "Raw dates -> start: '$startDate', end: '$endDate'")
-
         val patterns = arrayOf("yyyy-MM-dd", "yyyy/MM/dd", "dd-MM-yyyy", "dd/MM/yyyy")
+
         for (pattern in patterns) {
             try {
                 val sdf = SimpleDateFormat(pattern, Locale.getDefault())
@@ -85,40 +94,99 @@ class WeatherActivity : AppCompatActivity() {
                 val end = sdf.parse(endDate)
                 if (start != null && end != null) {
                     val diff = end.time - start.time
-                    val days = TimeUnit.MILLISECONDS.toDays(diff).toInt() + 1
-                    val result = if (days < 1) 1 else days
-                    Log.d("WeatherActivity", "Parsed with pattern '$pattern' -> days = $result")
-                    return result
+                    return (TimeUnit.MILLISECONDS.toDays(diff).toInt() + 1).coerceAtLeast(1)
                 }
-            } catch (e: Exception) {
-                // try next pattern
-            }
+            } catch (_: Exception) { }
         }
-
-        Log.e("WeatherActivity", "Failed to parse dates (tried multiple patterns). Falling back to 1 day.")
         return 1
     }
 
     private fun showPackingListDialog(weatherCondition: String, days: Int) {
         val packingList = generatePackingList(weatherCondition, days)
-        val packingListText = packingList.joinToString("\n") { "• $it" }
+        val packingText = packingList.joinToString("\n") { "• $it" }
 
         AlertDialog.Builder(this)
-            .setTitle("Packing List for $days-Day Trip (${weatherCondition.replaceFirstChar { it.uppercase() }})")
-            .setMessage(packingListText)
+            .setTitle("Packing List ($days days)")
+            .setMessage(packingText)
             .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
-            .create()
             .show()
     }
 
+    // ****************************
+    // ** SHARE TRIP AS PDF (with packing list)
+    // ****************************
+    private fun shareTripAsPdf(trip: Trip, days: Int) {
+
+        val pdfFile = File(cacheDir, "Trip_${trip.tripName}.pdf")
+        val packingList = generatePackingList(trip.weatherCondition, days)
+
+        val pdf = PdfDocument()
+        val pageInfo = PdfDocument.PageInfo.Builder(300, 900, 1).create()
+        val page = pdf.startPage(pageInfo)
+
+        val canvas = page.canvas
+        val paint = Paint()
+        paint.textSize = 12f
+
+        var y = 25
+
+        // Title
+        paint.textSize = 16f
+        canvas.drawText("Trip Summary", 80f, y.toFloat(), paint)
+
+        paint.textSize = 12f
+        y += 30
+
+        canvas.drawText("Trip Name: ${trip.tripName}", 10f, y.toFloat(), paint)
+        y += 20
+        canvas.drawText("Country: ${trip.country}", 10f, y.toFloat(), paint)
+        y += 20
+        canvas.drawText("Start Date: ${trip.startDate}", 10f, y.toFloat(), paint)
+        y += 20
+        canvas.drawText("End Date: ${trip.endDate}", 10f, y.toFloat(), paint)
+        y += 20
+        canvas.drawText("Trip Types: ${trip.tripTypes.joinToString()}", 10f, y.toFloat(), paint)
+        y += 20
+        canvas.drawText("Notes: ${trip.notes ?: "None"}", 10f, y.toFloat(), paint)
+        y += 20
+        canvas.drawText("Weather: ${trip.weatherCondition}", 10f, y.toFloat(), paint)
+
+        // PACKING LIST
+        y += 30
+        paint.textSize = 14f
+        canvas.drawText("Packing List ($days days):", 10f, y.toFloat(), paint)
+        y += 20
+
+        paint.textSize = 12f
+        for (item in packingList) {
+            canvas.drawText("• $item", 15f, y.toFloat(), paint)
+            y += 18
+        }
+
+        pdf.finishPage(page)
+        pdf.writeTo(FileOutputStream(pdfFile))
+        pdf.close()
+
+        val uri = FileProvider.getUriForFile(this, "$packageName.provider", pdfFile)
+
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "application/pdf"
+        intent.putExtra(Intent.EXTRA_STREAM, uri)
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+
+        startActivity(Intent.createChooser(intent, "Share Trip PDF"))
+    }
+
+    // Packing list generator
     private fun generatePackingList(weatherCondition: String, days: Int): List<String> {
-        val baseList = when (weatherCondition.lowercase()) {
-            "clear" -> listOf("Sunglasses", "Light clothing", "Sunscreen", "Hat", "Walking shoes")
-            "clouds" -> listOf("Light jacket", "Comfortable clothes", "Umbrella", "Walking shoes")
-            "rain" -> listOf("Rain jacket", "Umbrella", "Waterproof shoes", "Quick-dry clothes")
-            "snow" -> listOf("Winter coat", "Gloves", "Scarf", "Thermal wear", "Boots")
-            "thunderstorm" -> listOf("Waterproof jacket", "Umbrella", "Quick-dry clothing", "Power bank")
-            else -> listOf("Comfortable clothing", "Shoes", "Umbrella", "Water bottle")
+
+        val base = when (weatherCondition.lowercase()) {
+            "clear" -> listOf("Sunglasses", "Light clothing", "Sunscreen", "Hat")
+            "clouds" -> listOf("Light jacket", "Comfortable clothes", "Umbrella")
+            "rain" -> listOf("Rain jacket", "Waterproof shoes", "Umbrella")
+            "snow" -> listOf("Winter coat", "Gloves", "Scarf", "Thermal wear")
+            "thunderstorm" -> listOf("Waterproof jacket", "Quick-dry clothes", "Power bank")
+            else -> listOf("Comfortable clothing", "Shoes", "Water bottle")
         }
 
         val essentials = listOf(
@@ -131,7 +199,8 @@ class WeatherActivity : AppCompatActivity() {
             "Travel documents"
         )
 
-        return essentials + baseList
+        return essentials + base
     }
 }
+
 // (Andy's Tech Tutorials, 2022)

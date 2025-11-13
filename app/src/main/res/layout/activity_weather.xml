@@ -141,5 +141,15 @@
                 android:layout_marginStart="8dp"/>
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btnShareTrip"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="#00BCD4"
+            android:text="Share Trip"
+            android:textColor="#FFFFFF" />
+
     </LinearLayout>
 </ScrollView>
