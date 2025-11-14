@@ -35,6 +35,7 @@ class WeatherActivity : AppCompatActivity() {
         val btnBack = findViewById<Button>(R.id.btnBack)
         val btnPackingList = findViewById<Button>(R.id.btnPackingList)
         val btnShareTrip = findViewById<Button>(R.id.btnShareTrip)
+        val btnViewOnMap = findViewById<Button>(R.id.btnViewOnMap) // New Maps button
 
         var tripIndex = intent.getIntExtra("tripIndex", -1)
         Log.d("WeatherActivity", "Received tripIndex: $tripIndex, trips size: ${TripRepository.trips.size}")
@@ -74,10 +75,20 @@ class WeatherActivity : AppCompatActivity() {
                 shareTripAsPdf(trip, tripDays)
             }
 
+            // New Maps button functionality
+            btnViewOnMap.setOnClickListener {
+                val intent = Intent(this, MapsActivity::class.java).apply {
+                    putExtra("DESTINATION", trip.country)
+                    putExtra("TRIP_NAME", trip.tripName)
+                }
+                startActivity(intent)
+            }
+
         } else {
             tvWeatherCondition.text = "Weather: No trip available"
             weatherIcon.setImageResource(R.drawable.ic_sunny)
             btnPackingList.isEnabled = false
+            btnViewOnMap.isEnabled = false
             Toast.makeText(this, "No trips available. Create a trip first.", Toast.LENGTH_LONG).show()
         }
 
