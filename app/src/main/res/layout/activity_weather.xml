@@ -151,5 +151,26 @@
             android:text="Share Trip"
             android:textColor="#FFFFFF" />
 
+
+        <!-- Maps Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Would you like to see the activities you can embark on?"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnViewOnMap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Destination on Map"
+            android:backgroundTint="#00BCD4"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp" />
+
     </LinearLayout>
 </ScrollView>
