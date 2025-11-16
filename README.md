@@ -81,7 +81,6 @@ The functionality of PackPal has expanded significantly to support a full travel
 - Weather conditions influence the generated packing list, ensuring users prepare appropriately for their destination’s climate.
 - Weather icons and dynamic UI responses enhance clarity and user feedback.
 
----
 
 #### **Search Flights (CheapFlightsFragment)**
 - Users can search for affordable flights using Amadeus API credentials.
@@ -92,7 +91,6 @@ The functionality of PackPal has expanded significantly to support a full travel
   - A RecyclerView (`FlightAdapter`) that updates automatically via Flow collection
 - This system provides fast, responsive, and accurate flight listings while keeping the UI fully non-blocking.
 
----
 
 #### **Local Activities & Google Maps Integration (MapsActivity)**
 - Users can explore nearby local attractions around their travel destination.
@@ -107,7 +105,6 @@ The functionality of PackPal has expanded significantly to support a full travel
     - Smoothly animate the camera view
 - Designed with coroutines for background geocoding and attraction loading to maintain UI responsiveness.
 
----
 
 #### **Attraction System**
 - Attractions are represented using an `Attraction` data class, including name, type, rating, and distance.
@@ -118,7 +115,6 @@ The functionality of PackPal has expanded significantly to support a full travel
   - A Toast provides immediate feedback
 - Although mock data is used for now, the design is structured to support future integration with the Google Places API.
 
----
 
 #### **Security & User Settings**
 - User data management is handled using `SharedPreferences`, including:
@@ -127,30 +123,26 @@ The functionality of PackPal has expanded significantly to support a full travel
   - Account deletion
 - This lightweight approach is suitable for prototypes while remaining easy to upgrade later.
 
----
 
 #### **Notifications**
 - Achievement and update notifications use `NotificationCompat` for compatibility across Android versions.
-- Notifications are triggered when users complete certain app actions, improving engagement.
+- Notifications are triggered when users complete certain app actions, improving user engagement.
 
----
 
 #### **Performance**
 - All network and geocoding operations run asynchronously using Kotlin coroutines.
 - RecyclerView adapters update efficiently using Flow and LiveData patterns.
 - Modular architecture supports:
   - Easy API upgrades  
-  - Migration to persistent storage (Room Database) in future development  
+  - Migration to persistent storage (RoomDB) in future development  
   - Separation of UI and data logic through ViewModels  
 
----
 
 ### **Performance**
 
 - **Efficiency:** Asynchronous HTTP requests prevent the UI from freezing and ensure responsive interactions.
 - **Scalability:** Modular architecture allows for future expansion, including migrating to persistent storage solutions.
 
----
 
 ### **Accessibility**
 
