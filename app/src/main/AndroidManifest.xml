@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.prog7314poepart2">
 
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
     <!-- 🌐 Internet permission for Firebase and API calls -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -80,6 +82,9 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+
+        <!-- Notification -->
+        <receiver android:name=".NotificationReceiver" />
 
         <!-- Google Maps API Key -->
         <meta-data

@@ -8,7 +8,6 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.util.Log
 import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -116,12 +115,21 @@ class CreateTrips : AppCompatActivity() {
                 TripRepository.trips[tripIndex] = trip
             } else {
                 TripRepository.trips.add(trip)
+
+                // Notification for trips (updates)
+                NotificationScheduler.scheduleTripNotifications(
+                    context = this,
+                    tripName = trip.tripName,
+                    startDateString = trip.startDate
+                )
+
                 if (TripRepository.trips.size >= 5) {
                     showAchievementNotification("🏅 Achievement Unlocked!", "Congratulations! You are now a Master Explorer! 🌍")
                 } else if (TripRepository.trips.size == 1) {
                     showAchievementNotification("🏅 Achievement Unlocked!", "Baby explorer 🌍🍼")
                 }
             }
+
 
             setResult(RESULT_OK)
             startActivity(Intent(this, MainActivity::class.java).apply {
@@ -136,7 +144,7 @@ class CreateTrips : AppCompatActivity() {
         askNotificationPermission()
     }
 
-    private fun showDatePicker(editText: EditText) { // (Coding with Dev, 2023)
+    private fun showDatePicker(editText: EditText) {
         val calendar = Calendar.getInstance()
         DatePickerDialog(
             this,
@@ -148,7 +156,6 @@ class CreateTrips : AppCompatActivity() {
             calendar.get(Calendar.DAY_OF_MONTH)
         ).show()
     }
-    // (Developer, 2024)
 
     private fun fetchWeather(city: String) {
         val apiKey = getString(R.string.openweather_api_key)
@@ -173,15 +180,13 @@ class CreateTrips : AppCompatActivity() {
             override fun onResponse(call: Call, response: Response) {
                 val body = response.body?.string()
                 if (!response.isSuccessful || body.isNullOrEmpty()) {
-                    runOnUiThread {
-                        weatherText.text = "Error: ${response.code}"
-                    }
+                    runOnUiThread { weatherText.text = "Error: ${response.code}" }
                     return
                 }
-
                 try {
                     val json = JSONObject(body)
-                    val condition = json.getJSONArray("weather").getJSONObject(0).optString("main", "Unknown")
+                    val condition = json.getJSONArray("weather")
+                        .getJSONObject(0).optString("main", "Unknown")
                     weatherCondition = condition
                     runOnUiThread { weatherText.text = "Weather: $condition" }
                 } catch (e: Exception) {
@@ -197,9 +202,7 @@ class CreateTrips : AppCompatActivity() {
                 "trip_rewards",
                 "Trip Rewards",
                 NotificationManager.IMPORTANCE_HIGH
-            ).apply {
-                description = "Notifications for achievements"
-            }
+            ).apply { description = "Notifications for achievements" }
             val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             manager.createNotificationChannel(channel)
         }
@@ -208,10 +211,10 @@ class CreateTrips : AppCompatActivity() {
     private fun askNotificationPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             when {
-                ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) ==
-                        PackageManager.PERMISSION_GRANTED -> {
-              
-                }
+                ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.POST_NOTIFICATIONS
+                ) == PackageManager.PERMISSION_GRANTED -> { }
 
                 shouldShowRequestPermissionRationale(Manifest.permission.POST_NOTIFICATIONS) -> {
                     AlertDialog.Builder(this)
