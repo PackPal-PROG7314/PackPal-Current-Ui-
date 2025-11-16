@@ -184,6 +184,11 @@ The PackPals project is hosted on GitHub with multiple commits tracking iterativ
 
 ---
 
+### **Attractions Page** 
+<img width="329" height="736" alt="image" src="https://github.com/user-attachments/assets/c9816853-f2f1-4cc2-b316-eec83a4f1b8c" />
+
+---
+
 ### **Contact Us Page**  
 <img src="https://github.com/user-attachments/assets/34c1bb9b-b642-4565-8f49-cac15ba20ddf" width="325" height="586"/>
 
