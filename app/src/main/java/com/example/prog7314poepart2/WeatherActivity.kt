@@ -47,13 +47,13 @@ class WeatherActivity : AppCompatActivity() {
         if (tripIndex != -1 && tripIndex < TripRepository.trips.size) {
             val trip = TripRepository.trips[tripIndex]
 
-            tvTripName.text = "Trip: ${trip.tripName}"
-            tvCountry.text = "Country: ${trip.country}"
-            tvStartDate.text = "Start Date: ${trip.startDate}"
-            tvEndDate.text = "End Date: ${trip.endDate}"
-            tvNotes.text = "Notes: ${trip.notes ?: "None"}"
-            tvTripTypes.text = "Trip Types: ${trip.tripTypes.joinToString(", ")}"
-            tvWeatherCondition.text = "Weather: ${trip.weatherCondition}"
+            tvTripName.text = "${getString(R.string.trip)} ${trip.tripName}"
+            tvCountry.text = "${getString(R.string.city)} ${trip.country}"
+            tvStartDate.text = "${getString(R.string.start_date)} ${trip.startDate}"
+            tvEndDate.text = "${getString(R.string.end_date)} ${trip.endDate}"
+            tvNotes.text = "${getString(R.string.notes)} ${trip.notes ?: getString(R.string.notes)}"
+            tvTripTypes.text = "${getString(R.string.trip_types)} ${trip.tripTypes.joinToString(", ")}"
+            tvWeatherCondition.text = "${getString(R.string.weather)} ${trip.weatherCondition}"
 
             val iconResId = when (trip.weatherCondition.lowercase()) {
                 "clear" -> R.drawable.ic_sunny
@@ -150,7 +150,7 @@ class WeatherActivity : AppCompatActivity() {
 
         canvas.drawText("Trip Name: ${trip.tripName}", 10f, y.toFloat(), paint)
         y += 20
-        canvas.drawText("Country: ${trip.country}", 10f, y.toFloat(), paint)
+        canvas.drawText("City: ${trip.country}", 10f, y.toFloat(), paint)
         y += 20
         canvas.drawText("Start Date: ${trip.startDate}", 10f, y.toFloat(), paint)
         y += 20

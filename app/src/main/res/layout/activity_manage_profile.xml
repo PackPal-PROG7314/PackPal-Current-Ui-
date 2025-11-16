@@ -26,14 +26,14 @@
         android:id="@+id/tvManageTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/manage_account"
+        android:textColor="#03A9F4"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Change Password Button -->
 

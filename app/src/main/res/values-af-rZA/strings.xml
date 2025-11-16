@@ -32,11 +32,11 @@
     <string name="address_123_walsh_street_cape_town_south_africa">Adres: Walshstraat 123, Kaapstad, Suid-Afrika</string>
 
     <string name="trip_name">Naam van Reis</string>
-    <string name="city">Stad</string>
+    <string name="city">Stad:</string>
     <string name="weather_condition_not_fetched">Weerstoestand: Nie verkry nie</string>
     <string name="start_date_yyyy_mm_dd">Begindatum (JJJJ-MM-DD)</string>
     <string name="end_date_yyyy_mm_dd">Einddatum (JJJJ-MM-DD)</string>
-    <string name="notes">Notas</string>
+    <string name="notes">Notas:</string>
 
     <string name="business">Besigheid</string>
     <string name="leisure">Ontspanning</string>
@@ -67,7 +67,6 @@
     <string name="confirm_password">Bevestig Wagwoord</string>
     <string name="create_account">Skep Rekening</string>
 
-    <string name="country">Land:</string>
     <string name="start_date">Begindatum:</string>
     <string name="end_date">Einddatum:</string>
     <string name="trip_types">Reistipes:</string>
@@ -97,4 +96,6 @@
     <string name="end_25_february_2025">End: 25 February 2025</string>
     <string name="cheap_flights">Goedkoop Vlugte</string>
     <string name="find_nearby_attractions">Vind Nabygeleë Besienswaardighede</string>
+    <string name="welcome_back">Welkom terug, %1$s</string>
+
 </resources>

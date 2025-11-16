@@ -40,7 +40,7 @@
                     android:id="@+id/tvCountry"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/country"
+                    android:text="@string/city"
                     android:textSize="16sp"
                     android:layout_marginTop="4dp"/>
 

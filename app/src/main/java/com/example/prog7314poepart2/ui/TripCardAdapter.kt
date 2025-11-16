@@ -28,7 +28,7 @@ class TripCardAdapter(private val context: Context, private val trips: List<Trip
 
         // Bind the views
         view.findViewById<TextView>(R.id.tripTitle).text = trip.tripName
-        view.findViewById<TextView>(R.id.tripCountry).text = "Country: ${trip.country}"
+        view.findViewById<TextView>(R.id.tripCountry).text = "City: ${trip.country}"
 
         val startDateFormatted = outputFormat.format(inputFormat.parse(trip.startDate)!!)
         val endDateFormatted = outputFormat.format(inputFormat.parse(trip.endDate)!!)
