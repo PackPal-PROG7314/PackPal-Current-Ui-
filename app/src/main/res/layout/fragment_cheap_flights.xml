@@ -12,7 +12,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Origin (IATA code e.g., JNB)"
+        android:hint="@string/origin_iata_code_e_g_jnb"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginBottom="12dp">
 
@@ -25,7 +25,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Destination (IATA code e.g., LHR)"
+        android:hint="@string/destination_iata_code_e_g_lhr"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginBottom="12dp">
 
@@ -38,7 +38,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Departure Date"
+        android:hint="@string/departure_date"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginBottom="12dp">
 
@@ -53,7 +53,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Return Date"
+        android:hint="@string/return_date"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_marginBottom="16dp">
 
@@ -67,7 +67,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/searchButton"
-        android:text="Search Flights"
+        android:text="@string/search_flights"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"

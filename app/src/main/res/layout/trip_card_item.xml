@@ -20,7 +20,7 @@
             android:id="@+id/tripTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Trip Name"
+            android:text="@string/trip_name"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="#000000"/>
@@ -30,7 +30,7 @@
             android:id="@+id/tripCountry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Country: Example"
+            android:text="@string/city"
             android:textSize="14sp"
             android:textColor="#555555"
             android:layout_marginTop="4dp"/>
@@ -40,7 +40,7 @@
             android:id="@+id/tripStartDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start: 21 February 2025"
+            android:text="@string/start_21_february_2025"
             android:textSize="14sp"
             android:textColor="#555555"
             android:layout_marginTop="2dp"/>
@@ -50,7 +50,7 @@
             android:id="@+id/tripEndDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="End: 25 February 2025"
+            android:text="@string/end_25_february_2025"
             android:textSize="14sp"
             android:textColor="#555555"
             android:layout_marginTop="2dp"/>

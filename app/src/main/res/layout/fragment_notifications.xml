@@ -20,8 +20,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:text="Email:"
-        android:textColor="#FFFFFF"
+        android:text="@string/email"
+        android:textColor="#00BCD4"
         android:textSize="18sp" />
 
     <Button
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:backgroundTint="#00BCD4"
-        android:text="Manage Trips" />
+        android:text="@string/manage_trips" />
 
     <Button
         android:id="@+id/helpButton"
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:backgroundTint="#00BCD4"
-        android:text="Help" />
+        android:text="@string/help" />
 
     <Button
         android:id="@+id/aboutButton"
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:backgroundTint="#00BCD4"
-        android:text="About" />
+        android:text="@string/about" />
 
     <Button
         android:id="@+id/logoutButton"
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:backgroundTint="#FF5722"
-        android:text="Logout" />
+        android:text="@string/logout" />
 
 
 </LinearLayout>

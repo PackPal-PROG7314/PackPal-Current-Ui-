@@ -31,7 +31,7 @@
     <fragment
         android:id="@+id/cheapFlightsFragment"
         android:name="com.example.prog7314poepart2.CheapFlightsFragment"
-        android:label="Cheap Flights"
+        android:label="@string/cheap_flights"
         tools:layout="@layout/fragment_cheap_flights" />
 
 </navigation>

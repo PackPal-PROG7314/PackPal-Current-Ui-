@@ -10,28 +10,28 @@
         android:id="@+id/etTripName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Trip Name"
+        android:hint="@string/trip_name"
         android:inputType="text" />
 
     <EditText
         android:id="@+id/etCountry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="City"
+        android:hint="@string/city"
         android:inputType="text" />
 
     <TextView
         android:id="@+id/weatherText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Weather condition: Not fetched"
+        android:text="@string/weather_condition_not_fetched"
         android:padding="8dp" />
 
     <EditText
         android:id="@+id/etStartDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Start Date (YYYY-MM-DD)"
+        android:hint="@string/start_date_yyyy_mm_dd"
         android:inputType="date"
         android:focusable="false" />
 
@@ -39,7 +39,7 @@
         android:id="@+id/etEndDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="End Date (YYYY-MM-DD)"
+        android:hint="@string/end_date_yyyy_mm_dd"
         android:inputType="date"
         android:focusable="false" />
 
@@ -47,45 +47,45 @@
         android:id="@+id/etNotes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Notes"
+        android:hint="@string/notes"
         android:inputType="textMultiLine" />
 
     <CheckBox
         android:id="@+id/cbBusiness"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Business" />
+        android:text="@string/business" />
 
     <CheckBox
         android:id="@+id/cbLeisure"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Leisure" />
+        android:text="@string/leisure" />
 
     <CheckBox
         android:id="@+id/cbFamily"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Family" />
+        android:text="@string/family" />
 
     <CheckBox
         android:id="@+id/cbAdventure"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Adventure" />
+        android:text="@string/adventure" />
 
     <Button
         android:id="@+id/btnCreateTrip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#00BCD4"
-        android:text="Create Trip" />
+        android:text="@string/create_trip" />
 
     <Button
         android:id="@+id/btnBack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#00BCD4"
-        android:text="Back" />
+        android:text="@string/back" />
 
 </LinearLayout>

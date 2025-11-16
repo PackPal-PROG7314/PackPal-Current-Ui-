@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">PROG7314POEPART2</string>
+
+    <!-- App branding -->
+    <string name="pack_pal">PACK PAL</string>
+
+    <!-- Google Sign-In -->
+    <string name="default_web_client_id">810932371925-mq7d4bn29ib4fib2bdpqhhvtj345hlqm.apps.googleusercontent.com</string>
+
+    <!-- OpenWeather API Key -->
+    <string name="openweather_api_key">98fb83b0ef5d7a805494ba9f551e3c70</string>
+
+    <!-- Bottom Navigation Titles -->
+    <string name="title_home">Tuis</string>
+    <string name="title_dashboard">Paneelbord</string>
+    <string name="title_notifications">Kennisgewings</string>
+
+    <!-- Menu / Section Labels -->
+    <string name="Trips">Reise</string>
+    <string name="Profile">Profiel</string>
+    <string name="trips">Reise</string>
+    <string name="profile">Profiel</string>
+
+    <!-- Placeholder text -->
+    <string name="hello_blank_fragment">Hallo leë fragment</string>
+    <string name="we_d_love_to_hear_from_you_whether_you_ve_got_feedback_questions_or_just_want_to_say_hi_reach_out_anytime">
+        Ons hoor graag van jou! Of jy nou terugvoer het, vrae het, of net wil hallo sê — kontak ons enige tyd.
+    </string>
+    <string name="email_support_packpals_com">E-pos: support@packpals.com</string>
+    <string name="phone_27_21_855_1234">Telefoon: +27 21 855 1234</string>
+    <string name="social_twitter_instagram_facebook">Sosiaal: Twitter | Instagram | Facebook</string>
+    <string name="address_123_walsh_street_cape_town_south_africa">Adres: Walshstraat 123, Kaapstad, Suid-Afrika</string>
+
+    <string name="trip_name">Naam van Reis</string>
+    <string name="city">Stad</string>
+    <string name="weather_condition_not_fetched">Weerstoestand: Nie verkry nie</string>
+    <string name="start_date_yyyy_mm_dd">Begindatum (JJJJ-MM-DD)</string>
+    <string name="end_date_yyyy_mm_dd">Einddatum (JJJJ-MM-DD)</string>
+    <string name="notes">Notas</string>
+
+    <string name="business">Besigheid</string>
+    <string name="leisure">Ontspanning</string>
+    <string name="family">Familie</string>
+    <string name="adventure">Avontuur</string>
+
+    <string name="create_trip">Skep Reis</string>
+    <string name="back">Terug</string>
+    <string name="login">Meld aan</string>
+    <string name="email">E-pos</string>
+    <string name="password">Wagwoord</string>
+    <string name="sign_up">Registreer</string>
+    <string name="sign_in_with_google">Meld aan met Google</string>
+    <string name="use_biometric_login">Gebruik Biometriese Aanmelding</string>
+    <string name="manage_account">Bestuur Rekening</string>
+    <string name="change_password">Verander Wagwoord</string>
+    <string name="delete_account">Vee Rekening uit</string>
+
+    <string name="destination">Bestemming:</string>
+    <string name="trip">Reis:</string>
+    <string name="nearby_attractions">Nabygeleë Besienswaardighede</string>
+    <string name="edit_personal_details">Wysig Persoonlike Besonderhede</string>
+    <string name="manage_trips">Bestuur Reise</string>
+    <string name="help">Hulp</string>
+    <string name="about">Oor</string>
+    <string name="log_out">Meld uit</string>
+    <string name="create_an_account">Skep n Rekening</string>
+    <string name="confirm_password">Bevestig Wagwoord</string>
+    <string name="create_account">Skep Rekening</string>
+
+    <string name="country">Land:</string>
+    <string name="start_date">Begindatum:</string>
+    <string name="end_date">Einddatum:</string>
+    <string name="trip_types">Reistipes:</string>
+    <string name="weather">Weer:</string>
+    <string name="packing_list">Paklys</string>
+    <string name="share_trip">Deel Reis</string>
+
+    <string name="would_you_like_to_see_the_activities_you_can_embark_on">
+        Wil jy die aktiwiteite sien wat jy kan aanpak?
+    </string>
+
+    <string name="view_destination_on_map">Bekyk Bestemming op Kaart</string>
+    <string name="origin_iata_code_e_g_jnb">Herkoms (IATA-kode bv. JNB)</string>
+    <string name="destination_iata_code_e_g_lhr">Bestemming (IATA-kode bv. LHR)</string>
+    <string name="departure_date">Vertrekdatum</string>
+    <string name="return_date">Terugkeerdatum</string>
+    <string name="search_flights">Soek Vlugte</string>
+
+    <string name="pack_for_your_new_adventure">Pak vir jou nuwe avontuur</string>
+    <string name="your_recent_adventures">JOU ONLANGSE AVONTURE</string>
+    <string name="logout">Meld uit</string>
+
+    <string name="segments_n_a">Segments: Nie beskikbaar nie</string>
+    <string name="duration_n_a">Duur: Nie beskikbaar nie</string>
+    <string name="carrier_n_a">Vervoerder: Nie beskikbaar nie</string>
+    <string name="start_21_february_2025">Start: 21 February 2025</string>
+    <string name="end_25_february_2025">End: 25 February 2025</string>
+    <string name="cheap_flights">Goedkoop Vlugte</string>
+    <string name="find_nearby_attractions">Vind Nabygeleë Besienswaardighede</string>
+</resources>

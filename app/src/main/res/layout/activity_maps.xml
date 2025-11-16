@@ -25,7 +25,7 @@
                 android:id="@+id/tvDestination"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Destination: "
+                android:text="@string/destination"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -33,7 +33,7 @@
                 android:id="@+id/tvTripInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Trip: "
+                android:text="@string/trip"
                 android:textSize="14sp"
                 android:layout_marginTop="4dp" />
 
@@ -41,7 +41,7 @@
                 android:id="@+id/btnFindAttractions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Find Nearby Attractions"
+                android:text="@string/find_nearby_attractions"
                 android:backgroundTint="#00BCD4"
                 android:textColor="#FFFFFF"
                 android:layout_marginTop="8dp" />
@@ -73,7 +73,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nearby Attractions"
+                android:text="@string/nearby_attractions"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:padding="16dp"

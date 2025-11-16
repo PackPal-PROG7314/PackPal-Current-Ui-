@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">PROG7314POEPART2</string>
+
+    <!-- App branding -->
+    <string name="pack_pal">PACK PAL</string>
+
+    <!-- Google Sign-In -->
+    <string name="default_web_client_id">810932371925-mq7d4bn29ib4fib2bdpqhhvtj345hlqm.apps.googleusercontent.com</string>
+
+    <!-- OpenWeather API Key -->
+    <string name="openweather_api_key">98fb83b0ef5d7a805494ba9f551e3c70</string>
+
+    <!-- Bottom Navigation Titles -->
+    <string name="title_home">Ikhaya</string>
+    <string name="title_dashboard">I-Dashboard</string>
+    <string name="title_notifications">Izaziso</string>
+
+    <!-- Menu / Section Labels -->
+    <string name="Trips">Uhambo</string>
+    <string name="Profile">Iphrofayili</string>
+    <string name="trips">Uhambo</string>
+    <string name="profile">Iphrofayili</string>
+
+    <!-- Placeholder text -->
+    <string name="hello_blank_fragment">Sawubona fragimenti engenalutho</string>
+    <string name="we_d_love_to_hear_from_you_whether_you_ve_got_feedback_questions_or_just_want_to_say_hi_reach_out_anytime">Siyajabula ukukuzwa! Noma unombono, imibuzo, noma ufuna nje ukusho sawubona—sizizwe ukhululekile ukuxhumana nganoma yisiphi isikhathi.</string>
+    <string name="email_support_packpals_com">I-imeyili: support@packpals.com</string>
+    <string name="phone_27_21_855_1234">Ucingo: +27 21 855 1234</string>
+    <string name="social_twitter_instagram_facebook">Imidiya: Twitter | Instagram | Facebook</string>
+    <string name="address_123_walsh_street_cape_town_south_africa">Ikheli: 123 Walsh Street, eKapa, eNingizimu Afrika</string>
+    <string name="trip_name">Igama Lohambo</string>
+    <string name="city">Idolobha</string>
+    <string name="weather_condition_not_fetched">Isimo sezulu: Asikatholiwe</string>
+    <string name="start_date_yyyy_mm_dd">Usuku Lokuqala (YYYY-MM-DD)</string>
+    <string name="end_date_yyyy_mm_dd">Usuku Lokugcina (YYYY-MM-DD)</string>
+    <string name="notes">Amanothi</string>
+    <string name="business">Ibhizinisi</string>
+    <string name="leisure">Ukuzijabulisa</string>
+    <string name="family">Umndeni</string>
+    <string name="adventure">Uhambo</string>
+    <string name="create_trip">Dala Uhambo</string>
+    <string name="back">Emuva</string>
+    <string name="login">Ngena</string>
+    <string name="email">I-imeyili</string>
+    <string name="password">Iphasiwedi</string>
+    <string name="sign_up">Bhalisa</string>
+    <string name="sign_in_with_google">Ngena nge-Google</string>
+    <string name="use_biometric_login">Sebenzisa Ukungena Ngesithombe Sobuso/umuno</string>
+    <string name="manage_account">Phatha I-akhawunti</string>
+    <string name="change_password">Shintsha Iphasiwedi</string>
+    <string name="delete_account">Susa I-akhawunti</string>
+    <string name="destination">Indawo Okuya Kuyona:</string>
+    <string name="trip">Uhambo:</string>
+    <string name="nearby_attractions">Izindawo Eziseduze Zokuvakasha</string>
+    <string name="edit_personal_details">Hlela Imininingwane Yakho</string>
+    <string name="manage_trips">Phatha Izihambo</string>
+    <string name="help">Usizo</string>
+    <string name="about">Mayelana</string>
+    <string name="log_out">Phuma</string>
+    <string name="create_an_account">Dala I-akhawunti</string>
+    <string name="confirm_password">Qinisekisa Iphasiwedi</string>
+    <string name="create_account">Dala I-akhawunti</string>
+    <string name="country">Izwe:</string>
+    <string name="start_date">Usuku Lokuqala:</string>
+    <string name="end_date">Usuku Lokugcina:</string>
+    <string name="trip_types">Izinhlobo Zohambo:</string>
+    <string name="weather">Isimo Sezulu:</string>
+    <string name="packing_list">Uhlu Lokupakisha</string>
+    <string name="share_trip">Yabelana Ngohambo</string>
+    <string name="would_you_like_to_see_the_activities_you_can_embark_on">Ungathanda ukubona imisebenzi ongayenza?</string>
+    <string name="view_destination_on_map">Buka Indawo Eya Kuyona Emephini</string>
+    <string name="origin_iata_code_e_g_jnb">Indawo Yokuqala (Ikhodi ye-IATA e.g., JNB)</string>
+    <string name="destination_iata_code_e_g_lhr">Indawo Okuya Kuyona (Ikhodi ye-IATA e.g., LHR)</string>
+    <string name="departure_date">Usuku Lokuya</string>
+    <string name="return_date">Usuku Lokubuya</string>
+    <string name="search_flights">Sesha Izindiza</string>
+    <string name="pack_for_your_new_adventure">Pakisha Uhambo Lwakho Olusha</string>
+    <string name="your_recent_adventures">IZINTO OZIZUZILE ZAKHO ZAKWAKHO</string>
+    <string name="logout">Phuma</string>
+    <string name="segments_n_a">Izigaba: N/A</string>
+    <string name="duration_n_a">Isikhathi: N/A</string>
+    <string name="carrier_n_a">Umphakeli: N/A</string>
+    <string name="start_21_february_2025">Usuku Lokuqala: 21 February 2025</string>
+    <string name="end_25_february_2025">Usuku Lokugcina: 25 February 2025</string>
+    <string name="cheap_flights">Izindiza Ezishibhile</string>
+    <string name="find_nearby_attractions">Thola Izindawo Eziseduze</string>
+</resources>
