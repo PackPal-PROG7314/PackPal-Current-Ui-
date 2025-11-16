@@ -63,6 +63,26 @@ The PackPals project is hosted on GitHub with multiple commits tracking iterativ
 ## **YouTube Video**
 https://youtu.be/LLNWOuGSlLU
 ---
+app/
+  src/main/java/dev/solora/
+    api/               # FirebaseFunctionsApi wrapper
+    auth/              # AuthRepository and auth flows
+    data/              # FirebaseRepository, models
+    dashboard/         # Dashboard data and ViewModel
+    leads/             # Leads ViewModel
+    navigation/        # Fragments and navigation glue
+    pdf/               # PDF generation and file sharing
+    profile/           # Profile ViewModel
+    quote/             # Quote calculation and NASA API
+    quotes/            # Quotes ViewModel
+    settings/          # Settings repository and ViewModel
+    ui/views/          # Custom UI components (CircleChartView)
+    utils/             # Utility classes (ToastUtils)
+    SoloraApp.kt       # App initialization (Firebase, Firestore offline)
+    MainActivity.kt    # Activity host
+  src/main/res/        # layouts, drawables, nav graphs, values
+functions/             # Firebase Cloud Functions (Node.js)
+---
 ## **Contributors**
 - [Liyema Mangcu] - ST10143385
 - [Ganeef Salie] - ST10214012
