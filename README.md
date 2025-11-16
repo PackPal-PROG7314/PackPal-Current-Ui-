@@ -39,24 +39,49 @@ Our primary objective is to provide travel enthusiasts with an app they can rely
 By ensuring these core functions operate seamlessly, PackPal aims to offer a complete and trustworthy travel-planning experience.
 ---
 
-## **Design Considerations**
+## Design Considerations
+
+Based on feedback from the initial rubric, the app’s interface was considered *“poorly designed.”* In response, several UI/UX enhancements were implemented to create a more visually appealing, intuitive, and cohesive user experience. These improvements were made alongside structural and functional considerations to ensure the app remains reliable, efficient, and user-friendly.
+
+---
+
+### **UI/UX Enhancements**
+
+- **Custom Input Containers:** Replaced basic TextViews with custom-styled input fields to provide a cleaner and more professional appearance.
+- **Thematic Background Image:** Added a background image to visually reinforce the travel theme and create a more engaging interface.
+- **Improved Button Visibility:** Enhanced button size and contrast to make key actions more prominent and accessible.
+- **Card-Based Trip Display:** Updated the trip list to a modern card layout for better readability and aesthetic appeal.
+- **Consistent Color Scheme:** Unified the app’s color palette to ensure visual consistency across all screens.
+
+---
+
 ### **User Interface (UI)**
-- **Intuitive Navigation**: Utilizes a bottom navigation bar with `BottomNavigationView` and `NavController` for seamless access to main sections.
-- **Responsive Layouts**: XML layouts (e.g., `activity_create_trips.xml`, `trip_item.xml`) use `ConstraintLayout` for adaptability across devices.
-- **Visual Feedback**: Dynamic weather icons and notifications enhance user engagement.
 
-- ### **Functionality**
-- **Data Management**: In-memory storage via `TripRepository` for quick access in this prototype.
-- **Weather Integration**: Real-time data fetched with OkHttp, processed to inform packing lists.
-- **Security**: Basic profile management with password updates and account deletion using `SharedPreferences`.
-- **Notifications**: Implemented with `NotificationCompat` for achievement alerts.
+- **Intuitive Navigation:** Implemented a bottom navigation bar using `BottomNavigationView` and `NavController` to provide seamless access to key sections of the app.
+- **Responsive Layouts:** XML layouts (e.g., `activity_create_trips.xml`, `trip_item.xml`) use `ConstraintLayout` to ensure compatibility with various screen sizes and devices.
+- **Visual Feedback:** Dynamic weather icons and user notifications help enhance clarity and engagement.
 
-- ### **Performance**
-- **Efficiency**: Asynchronous HTTP requests ensure smooth UI performance.
-- **Scalability**: Modular design supports future features like persistent storage.
+---
+
+### **Functionality**
+
+- **Data Management:** Uses in-memory storage through `TripRepository` for fast and lightweight data handling in this prototype.
+- **Weather Integration:** Real-time weather data fetched with **OkHttp**, supporting intelligent packing list generation.
+- **Security:** Basic profile management implemented through `SharedPreferences`, including password updates and account deletion.
+- **Notifications:** Achievements and updates are delivered via `NotificationCompat` for a smooth user experience.
+
+---
+
+### **Performance**
+
+- **Efficiency:** Asynchronous HTTP requests prevent the UI from freezing and ensure responsive interactions.
+- **Scalability:** Modular architecture allows for future expansion, including migrating to persistent storage solutions.
+
+---
 
 ### **Accessibility**
-- Clear labels, hints, and toast messages cater to users of varying technical familiarity.
+
+- Clear labels, hints, and toast messages improve usability for users with varying levels of technical experience.
 
 ---
 
