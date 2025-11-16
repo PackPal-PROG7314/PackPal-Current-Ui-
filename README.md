@@ -160,13 +160,45 @@ The PackPals project is hosted on GitHub with multiple commits tracking iterativ
 
 - ---
 
-## **Screenshots**
-<p align="center">
-  **Login Page**
-  <img width="333" height="661" alt="image" src="https://github.com/user-attachments/assets/d5f6524a-6054-476a-aad0-2bd1e358a533" />
+## **📸 Screenshots**
 
-  <img width="328" height="657" alt="image" src="https://github.com/user-attachments/assets/eca76aaf-24a0-445b-9b10-32157953987c" />
+<p align="center">
+
+### **Login Page**  
+<img src="https://github.com/user-attachments/assets/d5f6524a-6054-476a-aad0-2bd1e358a533" width="333" height="661"/>
+
+---
+
+### **Home Page**  
+<img src="https://github.com/user-attachments/assets/619e4fe3-2633-4783-8f02-c3a0df2be389" width="336" height="736"/>
+
+---
+
+### **Trip Creation Page**  
+<img src="https://github.com/user-attachments/assets/bc29cc37-cad7-494a-8d64-e352681084c4" width="334" height="658"/>
+
+---
+
+### **View Trip Page**  
+<img src="https://github.com/user-attachments/assets/952e8ae2-586e-403b-97c2-dd30f9f5c77e" width="329" height="522"/>
+
+---
+
+### **Contact Us Page**  
+<img src="https://github.com/user-attachments/assets/34c1bb9b-b642-4565-8f49-cac15ba20ddf" width="325" height="586"/>
+
+---
+
+### **Flight Search**  
+<img src="https://github.com/user-attachments/assets/0610a858-295b-4458-a0b9-ce4a69faeb91" width="339" height="734"/>
+
+---
+
+### **Edit Profile**  
+<img src="https://github.com/user-attachments/assets/64083320-bab6-46a9-97e3-18995f7a9e14" width="325" height="694"/>
+
 </p>
+
 
 ---
 
