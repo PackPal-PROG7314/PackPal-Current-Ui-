@@ -36,7 +36,6 @@ Our primary objective is to provide travel enthusiasts with an app they can rely
 - Share trip information  
 - Explore local activities  
 - Search for affordable flights  
-
 By ensuring these core functions operate seamlessly, PackPal aims to offer a complete and trustworthy travel-planning experience.
 ---
 
