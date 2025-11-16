@@ -65,10 +65,83 @@ Based on feedback from the initial rubric, the app’s interface was considered 
 
 ### **Functionality**
 
-- **Data Management:** Uses in-memory storage through `TripRepository` for fast and lightweight data handling in this prototype.
-- **Weather Integration:** Real-time weather data fetched with **OkHttp**, supporting intelligent packing list generation.
-- **Security:** Basic profile management implemented through `SharedPreferences`, including password updates and account deletion.
-- **Notifications:** Achievements and updates are delivered via `NotificationCompat` for a smooth user experience.
+The functionality of PackPal has expanded significantly to support a full travel-planning experience. The app integrates multiple core systems—trip creation, weather retrieval, activity exploration, and flight searching—while maintaining performance, responsiveness, and usability.
+
+---
+
+#### **Trip Management & Data Handling**
+- Trips are represented using a structured `Trip` data class, storing trip name, destination, dates, notes, trip types, and optional weather or coordinate data.
+- Trips are stored using an in-memory `TripRepository` to provide fast access in this prototype version.
+- The `Trip` model includes helper functions such as date parsing (`getStartDateAsDate()`) and formatted string output for improved readability across the app.
+
+---
+
+#### **Weather Integration**
+- Real-time weather information is retrieved through asynchronous calls using **OkHttp**.
+- Weather conditions influence the generated packing list, ensuring users prepare appropriately for their destination’s climate.
+- Weather icons and dynamic UI responses enhance clarity and user feedback.
+
+---
+
+#### **Search Flights (CheapFlightsFragment)**
+- Users can search for affordable flights using Amadeus API credentials.
+- The feature includes:
+  - Origin and destination airport code input
+  - Date pickers for departure and optional return date
+  - Coroutine-based API calls in `FlightViewModel` for efficient processing
+  - A RecyclerView (`FlightAdapter`) that updates automatically via Flow collection
+- This system provides fast, responsive, and accurate flight listings while keeping the UI fully non-blocking.
+
+---
+
+#### **Local Activities & Google Maps Integration (MapsActivity)**
+- Users can explore nearby local attractions around their travel destination.
+- Features include:
+  - Google Maps display with zoom, compass, and toolbar controls
+  - Automatic geocoding of destination names using `Geocoder`
+  - Fallback coordinates for international destinations when geocoding fails
+  - Clickable map interactions allowing users to select new points of interest
+  - A dynamic RecyclerView list of attractions, each clickable to:
+    - Add markers to the map
+    - Display ratings, type, and distance
+    - Smoothly animate the camera view
+- Designed with coroutines for background geocoding and attraction loading to maintain UI responsiveness.
+
+---
+
+#### **Attraction System**
+- Attractions are represented using an `Attraction` data class, including name, type, rating, and distance.
+- `AttractionsAdapter` populates the list using Material-style list items (`simple_list_item_2`).
+- When users select an attraction:
+  - A new marker is added to the map
+  - Camera moves to the attraction
+  - A Toast provides immediate feedback
+- Although mock data is used for now, the design is structured to support future integration with the Google Places API.
+
+---
+
+#### **Security & User Settings**
+- User data management is handled using `SharedPreferences`, including:
+  - Profile details
+  - Password updates
+  - Account deletion
+- This lightweight approach is suitable for prototypes while remaining easy to upgrade later.
+
+---
+
+#### **Notifications**
+- Achievement and update notifications use `NotificationCompat` for compatibility across Android versions.
+- Notifications are triggered when users complete certain app actions, improving engagement.
+
+---
+
+#### **Performance**
+- All network and geocoding operations run asynchronously using Kotlin coroutines.
+- RecyclerView adapters update efficiently using Flow and LiveData patterns.
+- Modular architecture supports:
+  - Easy API upgrades  
+  - Migration to persistent storage (Room Database) in future development  
+  - Separation of UI and data logic through ViewModels  
 
 ---
 
