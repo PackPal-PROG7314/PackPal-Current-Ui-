@@ -11,8 +11,33 @@ PackPal is a travel planning app for Android that makes organizing and organizin
 ---
 
 ## **Purpose**
-By providing a centralized platform for efficiently planning and organizing travel, PackPal aims to improve the travel planning experience. Through the integration of weather information from the OpenWeatherMap API, the application guarantees that users receive customized packing recommendations according to the conditions at their destination. It serves a broad spectrum of tourists, including both business professionals and leisure travelers.
+PackPal is a travel-packing application developed in **Android Studio** with the goal of assisting users who struggle to plan and organize what they need for a trip. The app helps travelers identify and prepare essential items required for journeys of any duration or destination. While the initial version focused mainly on generating packing lists and providing weather updates, the app has since evolved significantly throughout Part 1 and Part 2 of the project.
 
+## Features Added
+
+### **• Share Trip**
+Allows users to export their trip details into a PDF and share it with family or friends, or simply keep it for personal reference.
+
+### **• Local Activities**
+Displays nearby attractions and activities based on the user’s trip location. This feature integrates with Google Maps, allowing users to tap an activity and be redirected for directions.
+
+### **• Search Flights**
+Enables users to search for affordable flights to any travel destination. By entering airport codes along with departure and return dates, the app retrieves and displays the cheapest available flight options.
+
+---
+
+## Project Objective
+
+Our primary objective is to provide travel enthusiasts with an app they can rely on—one that delivers all the essential travel-planning features they need. This includes the ability to:
+
+- Create and manage trips  
+- Retrieve accurate weather details  
+- View a personalized packing list  
+- Share trip information  
+- Explore local activities  
+- Search for affordable flights  
+
+By ensuring these core functions operate seamlessly, PackPal aims to offer a complete and trustworthy travel-planning experience.
 ---
 
 ## **Design Considerations**
