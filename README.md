@@ -149,14 +149,35 @@ The functionality of PackPal has expanded significantly to support a full travel
 - Clear labels, hints, and toast messages improve usability for users with varying levels of technical experience.
 
 ---
+### **App Run**
+App Setup & Run
+1. Clone the project:
+To clone the project you will need to run the following commands below
+ <img width="783" height="25" alt="image" src="https://github.com/user-attachments/assets/292c75cf-0f45-482f-822a-eb6227b8ea62" />
+<img width="288" height="36" alt="image" src="https://github.com/user-attachments/assets/8fb2610d-ad46-4438-be1e-a3cabf4a4a6d" />
+ 
+2. Open the project in Android Studio:
+•	Launch Android Studio.
+•	Select Open an existing project.
+•	Navigate to the folder you just cloned and click OK.
+3. Configure Firebase:
+•	Make sure the google-services.json is located in app/.
+•	If you are going to use your own Firebase project, download a new google-services.json from the Firebase Console and replace the existing one.
+4. Sync Gradle:
+•	Click Sync Now when asked or go to File → Sync Project with Gradle Files.
+5. Run the app:
+•	Android Studio: Click the green Run button or press Shift + F10.
+•	Another way is to run a command (./gradlew :app:assembleDebug) then after words install the APK from app/build/outputs/apk/debug. 
+•	If the previous way doesn’t work you can navigate to build at the top and click “Generate Bundles or APKs” then click “Generate APKs” 
+
+---
 
 ## **Utilization of GitHub and GitHub Actions**
 
 ### **GitHub Repository**
-The PackPals project is hosted on GitHub with multiple commits tracking iterative development (e.g., "Added weather API integration which is OpenWeather API"). The repository is structured as:
-- `app/src/main/java/` - Kotlin source files.
-- `app/src/main/res/layout/` - XML layouts.
-- `README.md` - This documentation.
+The PackPals project is hosted on GitHub with multiple commits tracking iterative development (e.g., "Added weather API integration which is OpenWeather API").
+<img width="385" height="515" alt="image" src="https://github.com/user-attachments/assets/5f36f0db-6b47-4250-8e9b-886e8aaca8eb" />
+
 
 - ---
 
@@ -204,15 +225,9 @@ The PackPals project is hosted on GitHub with multiple commits tracking iterativ
 
 </p>
 
-
----
-
-## **Future Improvements**
-- Added Github actions
-
 ---
 ## **YouTube Video**
-https://youtu.be/LLNWOuGSlLU
+https://youtu.be/cS_MyR-rH_0  
 ---
 ## **Contributors**
 - [Liyema Mangcu] - ST10143385
@@ -223,19 +238,25 @@ https://youtu.be/LLNWOuGSlLU
 ---
 ## **References**
 
-- The Zone (2021). Android x Kotlin Beginner Tutorial [2021] #0 - Project Introduction. [online] YouTube. Available at: https://www.youtube.com/watch?v=GP4p3d7_b2k&list=PLpZQVidZ65jPUF-o0LUvkY-XVAAkvL-Xb [Accessed 23 Apr. 2025].
-- Coding with Dev (2023). android date picker dialog example | DatePickerDialog - Android Studio Tutorial | Kotlin. [online] YouTube. Available at: https://www.youtube.com/watch?v=DpL8DhCNKdE&list=PLv59B8ZxVvbv0k49hQxK10bT1fYEmWvMU&index=2 [Accessed 1 May 2025].
-- Developer (2024). Date pickers. [online] Android Developers. Available at: https://developer.android.com/develop/ui/compose/components/datepickers [Accessed 1 May 2025].
-- Developer (2025). Adapter | API reference | Android Developers. [online] Android Developers. Available at: https://developer.android.com/reference/kotlin/android/widget/Adapter [Accessed 1 May 2025].
-- Foxandroid (2021). Custom ListView with item click using Kotlin in Android || ListView in Android || Kotlin. [online] YouTube. Available at: https://www.youtube.com/watch?v=KPvYXXERLjk&list=PLv59B8ZxVvbv0k49hQxK10bT1fYEmWvMU&index=1 [Accessed 1 May 2025].
-- geeksforgeeks (2022). DatePicker in Android. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/datepicker-in-android/ [Accessed 1 May 2025].
-- FineGap (2025). Available at: https://youtu.be/bhUuVb7g6qk?si=8i2Nw8w09nxzdwv4 [Accessed 1 May 2025].
-- Android Knowledge. (2022). Easy Login Page in Android Studio using Kotlin - 5 Steps Only! - Android Knowledge. [online] Available at: https://androidknowledge.com/loginpage-in-android-kotlin/.
-- CodeLabX (2025). Available at: https://youtu.be/8obgNNlj3Eo?si=szFq0AC1AIA9qwZ8 [Accessed 1 May 2025].
-- The Code City (2025). Available at: https://youtu.be/WAejZCkLJAI?si=F3zcamsTl-dCJDBF [Accessed 1 May 2025].
-- Android Knowledge (2023). ListView in Android Studio using Kotlin | Android Knowledge. [online] YouTube. Available at: https://www.youtube.com/watch?v=BntLlH4eSYA [Accessed 1 May 2025].
-- ‌Android Developers. (2025). Display pop-up messages or requests for user input. [online] Available at: https://developer.android.com/develop/ui/compose/quick-guides/content/display-user-input [Accessed 10 Apr 2025].
-- Shahi, S. (2023). How to create bottom navigation in Android using Kotlin- Beginners Guide. [online] Medium. Available at: https://medium.com/@shahisofiya575/how-to-create-bottom-navigation-in-android-using-material-design-9de844c484a [Accessed 10 Apr 2025].
-- Philipp Lackner (2022). Local Notifications in Android - The Full Guide (Android Studio Tutorial). [online] YouTube. Available at: https://www.youtube.com/watch?v=LP623htmWcI [Accessed 26 Nov. 2024].
--  Andy's Tech Tutorials (2022). [Tutorial] - How to Use Weather API for Beginners | Open Weather Map API. [online] Youtu.be. Available at: https://youtu.be/MdIfZJ08g2I?si=gy4aTigN_vK77nzT [Accessed 28 Sep. 2025].
--  Flaticon. “Flaticon, the Largest Database of Free Vector Icons.” Flaticon, 2025, www.flaticon.com/.
+- Adenit Weekly (2025). Android Multi Language Support. [online] YouTube. Available at: https://youtu.be/COFtAh6NQA8?si=MiNV66mOFP6tnfq_ [Accessed 16 Nov. 2025].
+- Amadeus IT Group SA. (n.d.). Connect to Amadeus travel APIs | Amadeus for Developers. [online] Available at: https://developers.amadeus.com/.
+- Andy's Tech Tutorials (2022). [Tutorial] - How to Use Weather API for Beginners | Open Weather Map API. [online] YouTube. Available at: https://www.youtube.com/watch?v=MdIfZJ08g2I.
+- Android Developers. (n.d.). Create a card-based layout. [online] Available at: https://developer.android.com/develop/ui/views/layout/cardview.
+- Android Developers Documentation (2024–2025). Date Pickers, Adapters, etc. Coding with Dev (2023). Android DatePickerDialog Tutorial.
+- CodeLabX (2024). Weather App in Android Studio (2024) | Full Step-by-Step Tutorial. [online] YouTube. Available at: https://www.youtube.com/watch?v=aL1wGcyyNJc.
+- DataFyx Dom (2024). Find Cheap Flight Tickets using Python & API, beginners step by step guide. [online] YouTube. Available at: https://www.youtube.com/watch?v=p7BmdnmatgQ [Accessed 16 Nov. 2025].
+- Easy Tuto (2022). BottomNavigationView with Fragments | Android Studio Tutorial | 2024. [online] YouTube. Available at: https://www.youtube.com/watch?v=OV25x3a55pk
+ [Accessed 15 Oct. 2025].
+- Flaticon (2025). Free vector icons.
+- Foxandroid (2023). Bottom Navigation Bar - Android Studio | Fragments | Java | 2023. [online] YouTube. Available at: https://www.youtube.com/watch?v=jOFLmKMOcK0.
+- GeeksforGeeks (2020). CardView in Android With Example. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/android/cardview-in-android-with-example/.
+- GeeksforGeeks (2022). How to Implement Google Map Inside Fragment in Android? [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/android/how-to-implement-google-map-inside-fragment-in-android/ [Accessed 16 Nov. 2025].
+- OpenWeatherMap.org (2015). Weather API - OpenWeatherMap. [online] Available at: https://openweathermap.org/api.
+- Panchal, K. (2025). Supporting Multiple Languages in Your Android Application. [online] Medium. Available at: https://medium.com/@khush.panchal123/supporting-multiple-languages-in-your-android-application-a08e21b1baf1 [Accessed 16 Nov. 2025].
+- Philipp Lackner (2024). How to Implement Biometric Auth in Your Android App. [online] YouTube. Available at: https://www.youtube.com/watch?v=_dCRQ9wta-I.
+- Reference listCodingSTUFF (2025). Maps en Android Studio - Search Videos. [online] Bing.com. Available at: https://www.bing.com/videos/riverview/relatedvideo?q=maps+en+android+studio&mid=75A05FD8BE8F98A4C15D75A05FD8BE8F98A4C15D&FORM=VIRE  [Accessed 16 Nov. 2025].
+- The Zone (2021). Android x Kotlin Beginner Tutorial [2021]. YouTube playlist.
+- Travelopro.com. (2019). How To Integrate Amadeus API. [online] Available at: https://www.travelopro.com/how-to-integrate-amadeus-api.php
+ [Accessed 16 Nov. 2025].
+- www.youtube.com. (n.d.). Firebase Google Sign-In With Jetpack Compose & Clean Architecture - Android Studio Tutorial. [online] Available at: https://www.youtube.com/watch?v=zCIfBbm06QM.
+
