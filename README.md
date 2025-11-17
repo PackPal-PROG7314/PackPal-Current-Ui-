@@ -157,18 +157,18 @@ To clone the project you will need to run the following commands below
 <img width="288" height="36" alt="image" src="https://github.com/user-attachments/assets/8fb2610d-ad46-4438-be1e-a3cabf4a4a6d" />
  
 2. Open the project in Android Studio:
-•	Launch Android Studio.
-•	Select Open an existing project.
-•	Navigate to the folder you just cloned and click OK.
+-	Launch Android Studio.
+-	Select Open an existing project.
+-	Navigate to the folder you just cloned and click OK.
 3. Configure Firebase:
-•	Make sure the google-services.json is located in app/.
-•	If you are going to use your own Firebase project, download a new google-services.json from the Firebase Console and replace the existing one.
+-	Make sure the google-services.json is located in app/.
+-	If you are going to use your own Firebase project, download a new google-services.json from the Firebase Console and replace the existing one.
 4. Sync Gradle:
-•	Click Sync Now when asked or go to File → Sync Project with Gradle Files.
+-	Click Sync Now when asked or go to File → Sync Project with Gradle Files.
 5. Run the app:
-•	Android Studio: Click the green Run button or press Shift + F10.
-•	Another way is to run a command (./gradlew :app:assembleDebug) then after words install the APK from app/build/outputs/apk/debug. 
-•	If the previous way doesn’t work you can navigate to build at the top and click “Generate Bundles or APKs” then click “Generate APKs” 
+-	Android Studio: Click the green Run button or press Shift + F10.
+-	Another way is to run a command (./gradlew :app:assembleDebug) then after words install the APK from app/build/outputs/apk/debug. 
+-	If the previous way doesn’t work you can navigate to build at the top and click “Generate Bundles or APKs” then click “Generate APKs” 
 
 ---
 
