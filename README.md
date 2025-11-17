@@ -208,9 +208,7 @@ The PackPals project is hosted on GitHub with multiple commits tracking iterativ
 ---
 
 ## **Future Improvements**
-- Integrate a database (e.g., Room) for persistent trip storage.
-- Enhance security with encrypted password storage.
-- Add offline mode for weather data caching.
+- Added Github actions
 
 ---
 ## **YouTube Video**
@@ -220,7 +218,7 @@ https://youtu.be/LLNWOuGSlLU
 - [Liyema Mangcu] - ST10143385
 - [Ganeef Salie] - ST10214012
 - [Onello Travis Tarjanne] - ST10178800
-- [Khenende Netshivhambe] - ST10379469
+- [Khenende Netshivhambe] - ST10379469 
 
 ---
 ## **References**
