@@ -175,13 +175,13 @@ To clone the project you will need to run the following commands below
 ## **Utilization of GitHub and GitHub Actions**
 
 ### **GitHub Repository**
-The PackPals project is hosted on GitHub with multiple commits tracking iterative development (e.g., "Added weather API integration which is OpenWeather API").
+The PackPals project is hosted on GitHub with multiple commits tracking iterative development (e.g., "Added weather API integration") 
 <img width="385" height="515" alt="image" src="https://github.com/user-attachments/assets/5f36f0db-6b47-4250-8e9b-886e8aaca8eb" />
 
 
-- ---
+---
 
-## **📸 Screenshots**
+## **Screenshots**
 
 <p align="center">
 
