@@ -8,6 +8,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -16,6 +17,9 @@ import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import okhttp3.*
 import org.json.JSONObject
 import java.io.IOException
@@ -111,25 +115,53 @@ class CreateTrips : AppCompatActivity() {
                 weatherCondition = weatherCondition
             )
 
+            // A. Save to TripRepository
             if (tripIndex != -1) {
                 TripRepository.trips[tripIndex] = trip
             } else {
                 TripRepository.trips.add(trip)
 
-                // Notification for trips (updates)
-                NotificationScheduler.scheduleTripNotifications(
-                    context = this,
-                    tripName = trip.tripName,
-                    startDateString = trip.startDate
-                )
-
+                // Achievements
                 if (TripRepository.trips.size >= 5) {
-                    showAchievementNotification("🏅 Achievement Unlocked!", "Congratulations! You are now a Master Explorer! 🌍")
+                    showAchievementNotification(
+                        "🏅 Achievement Unlocked!",
+                        "Congratulations! You are now a Master Explorer! 🌍"
+                    )
                 } else if (TripRepository.trips.size == 1) {
-                    showAchievementNotification("🏅 Achievement Unlocked!", "Baby explorer 🌍🍼")
+                    showAchievementNotification(
+                        "🏅 Achievement Unlocked!",
+                        "Baby explorer 🌍🍼"
+                    )
                 }
             }
 
+            // B. Save to RoomDB
+            CoroutineScope(Dispatchers.IO).launch {
+                val db = TripDatabase.getDatabase(applicationContext)
+
+                db.tripDao().insertTrip(
+                    TripEntity(
+                        tripName = trip.tripName,
+                        country = trip.country,
+                        startDate = trip.startDate,
+                        endDate = trip.endDate,
+                        notes = trip.notes ?: "",
+                        tripTypes = trip.tripTypes.joinToString(","),
+                        weatherCondition = trip.weatherCondition
+                    )
+                )
+
+                // DEBUG — print everything in the DB
+                val allTrips = db.tripDao().getAllTrips()
+                Log.d("ROOM_DEBUG", "Trips in DB: $allTrips")
+            }
+
+            // C. Notifications
+            NotificationScheduler.scheduleTripNotifications(
+                this,
+                trip.tripName,
+                trip.startDate
+            )
 
             setResult(RESULT_OK)
             startActivity(Intent(this, MainActivity::class.java).apply {
@@ -166,7 +198,8 @@ class CreateTrips : AppCompatActivity() {
         }
 
         val encodedCity = URLEncoder.encode(city, "UTF-8")
-        val url = "https://api.openweathermap.org/data/2.5/weather?q=$encodedCity&appid=$apiKey&units=metric"
+        val url =
+            "https://api.openweathermap.org/data/2.5/weather?q=$encodedCity&appid=$apiKey&units=metric"
 
         val request = Request.Builder().url(url).build()
         client.newCall(request).enqueue(object : Callback {
@@ -189,7 +222,7 @@ class CreateTrips : AppCompatActivity() {
                         .getJSONObject(0).optString("main", "Unknown")
                     weatherCondition = condition
                     runOnUiThread { weatherText.text = "Weather: $condition" }
-                } catch (e: Exception) {
+                } catch (_: Exception) {
                     runOnUiThread { weatherText.text = "Parse error." }
                 }
             }
@@ -203,6 +236,7 @@ class CreateTrips : AppCompatActivity() {
                 "Trip Rewards",
                 NotificationManager.IMPORTANCE_HIGH
             ).apply { description = "Notifications for achievements" }
+
             val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             manager.createNotificationChannel(channel)
         }
@@ -214,7 +248,7 @@ class CreateTrips : AppCompatActivity() {
                 ContextCompat.checkSelfPermission(
                     this,
                     Manifest.permission.POST_NOTIFICATIONS
-                ) == PackageManager.PERMISSION_GRANTED -> { }
+                ) == PackageManager.PERMISSION_GRANTED -> {}
 
                 shouldShowRequestPermissionRationale(Manifest.permission.POST_NOTIFICATIONS) -> {
                     AlertDialog.Builder(this)
@@ -227,9 +261,7 @@ class CreateTrips : AppCompatActivity() {
                         .show()
                 }
 
-                else -> {
-                    requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
-                }
+                else -> requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
             }
         }
     }
